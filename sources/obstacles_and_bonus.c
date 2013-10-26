@@ -5,7 +5,7 @@
 ** Login   <barroq_t@epitech.net>
 ** 
 ** Started on  Sat Oct 26 14:28:29 2013 thomas barroqueiro
-** Last update Sat Oct 26 15:32:09 2013 thomas barroqueiro
+** Last update Sat Oct 26 16:48:59 2013 thomas barroqueiro
 */
 
 #include		"../includes/mariokart.h"
@@ -61,6 +61,6 @@ void			bonus(t_game *p)
     {
       if (p->map[pos] == ' ')
 	p->map[pos] = 'A';
-      p->bonus_cd = 12;
+      p->bonus_cd = 8;
     }
 }

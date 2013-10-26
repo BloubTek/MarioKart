@@ -5,7 +5,7 @@
 ** Login   <barroq_t@epitech.net>
 ** 
 ** Started on  Sat Oct 26 10:26:08 2013 thomas barroqueiro
-** Last update Sat Oct 26 14:45:21 2013 thomas barroqueiro
+** Last update Sat Oct 26 16:57:51 2013 thomas barroqueiro
 */
 
 #include		"../includes/mariokart.h"
@@ -42,7 +42,7 @@ void			cone(t_game *p)
   if (check == 0)
     p->algo = 0;
 }
-/*
+
 void			reverse_cone(t_game *p)
 {
   int			i;
@@ -67,11 +67,11 @@ void			reverse_cone(t_game *p)
     }
   if (check == 0)
     p->algo = 0;
-    }*/
+}
 
 void			generate_algo(t_game *p)
 {
   srand(time(0));
-  p->algo = (random() % 4) + 1;
+  p->algo = (random() % 5) + 1;
   p->cd = ((random() % 6) + 1) * 5;
 }

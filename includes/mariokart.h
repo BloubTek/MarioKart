@@ -5,7 +5,7 @@
 ** Login   <barroq_t@epitech.net>
 ** 
 ** Started on  Fri Oct 25 22:14:17 2013 thomas barroqueiro
-** Last update Sat Oct 26 14:44:21 2013 thomas barroqueiro
+** Last update Sat Oct 26 16:52:08 2013 thomas barroqueiro
 */
 
 #ifndef			MARIOKART_H_
@@ -13,6 +13,8 @@
 
 #include		<stdlib.h>
 #include		<termios.h>
+
+#define			SPEED	100000
 
 typedef	struct		s_game	t_game;
 

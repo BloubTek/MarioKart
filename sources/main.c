@@ -5,7 +5,7 @@
 ** Login   <barroq_t@epitech.net>
 ** 
 ** Started on  Fri Oct 25 22:16:53 2013 thomas barroqueiro
-** Last update Sat Oct 26 15:30:24 2013 thomas barroqueiro
+** Last update Sat Oct 26 16:49:16 2013 thomas barroqueiro
 */
 
 #include		<time.h>
@@ -39,7 +39,7 @@ static	void		init_var(t_game *p, char *av1, char *av2)
   p->algo = 0;
   p->cd = 0;
   p->obstacle_cd = 6;
-  p->bonus_cd = 12;
+  p->bonus_cd = 8;
 }
 
 static	void		drive(t_game *p)
@@ -74,7 +74,7 @@ int			main(int ac, char **av)
       drive(&p);
       p.score = (1 + ((time(0) - ti) * 0.2) + p.bonus);
       aff_func(&p);
-      usleep(200000);
+      usleep(SPEED);
     }
   free(p.map);
   unraw_mode(&t);

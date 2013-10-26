@@ -5,7 +5,7 @@
 ** Login   <barroq_t@epitech.net>
 ** 
 ** Started on  Sat Oct 26 09:54:24 2013 thomas barroqueiro
-** Last update Sat Oct 26 14:48:08 2013 thomas barroqueiro
+** Last update Sat Oct 26 16:06:55 2013 thomas barroqueiro
 */
 
 #include		"../includes/mariokart.h"
@@ -88,6 +88,6 @@ void			move_wall(t_game *p)
     turn_left(p);
   else if (p->algo == 4)
     turn_right(p);
-  /*  else if (p->algo == 5)
-      reverse_cone(p);*/
+  else if (p->algo == 5)
+    reverse_cone(p);
 }
