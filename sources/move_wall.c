@@ -1,0 +1,93 @@
+/*
+** move_wall.c for   in /home/barroq_t//Rush/mariokart
+** 
+** Made by thomas barroqueiro
+** Login   <barroq_t@epitech.net>
+** 
+** Started on  Sat Oct 26 09:54:24 2013 thomas barroqueiro
+** Last update Sat Oct 26 14:48:08 2013 thomas barroqueiro
+*/
+
+#include		"../includes/mariokart.h"
+
+void			move_left_to_left(t_game *p)
+{
+  int			i;
+
+  i = p->largeur;
+  while (i < (p->largeur * 2))
+    {
+      if (p->map[i] == '%' && (i % p->largeur) <= (p->largeur / 2))
+	{
+	  p->map[i] = ' ';
+	  p->map[i - 1] = '%';
+	  return ;
+	}
+      i++;
+    }
+}
+
+void			move_left_to_right(t_game *p)
+{
+  int			i;
+
+  i = p->largeur;
+  while (i < (p->largeur * 2))
+    {
+      if (p->map[i] == '%' && (i % p->largeur) < (p->largeur / 2))
+	{
+	  p->map[i] = ' ';
+	  p->map[i + 1] = '%';
+	  return ;
+	}
+      i++;
+    }
+}
+
+void			move_right_to_left(t_game *p)
+{
+  int			i;
+
+  i = p->largeur;
+  while (i < (p->largeur * 2))
+    {
+      if (p->map[i] == '%' && (i % p->largeur) > (p->largeur / 2))
+	{
+	  p->map[i] = ' ';
+	  p->map[i - 1] = '%';
+	  return ;
+	}
+      i++;
+    }
+}
+
+void			move_right_to_right(t_game *p)
+{
+  int			i;
+
+  i = (2 * p->largeur);
+  while (i > p->largeur)
+    {
+      if (p->map[i] == '%' && (i % p->largeur) >= (p->largeur / 2))
+	{
+	  p->map[i] = ' ';
+	  p->map[i + 1] = '%';
+	  return ;
+	}
+      i--;
+    }
+}
+
+void			move_wall(t_game *p)
+{
+  if (p->algo == 1)
+    front(p);
+  else if (p->algo == 2)
+    cone(p);
+  else if (p->algo == 3)
+    turn_left(p);
+  else if (p->algo == 4)
+    turn_right(p);
+  /*  else if (p->algo == 5)
+      reverse_cone(p);*/
+}
