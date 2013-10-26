@@ -5,7 +5,7 @@
 ** Login   <barroq_t@epitech.net>
 ** 
 ** Started on  Sat Oct 26 00:52:07 2013 thomas barroqueiro
-** Last update Sat Oct 26 14:29:11 2013 thomas barroqueiro
+** Last update Sat Oct 26 15:30:13 2013 thomas barroqueiro
 */
 
 #include		"../includes/mariokart.h"
@@ -91,15 +91,13 @@ void			change_cases(t_game *p)
     }
 }
 
-void			goin(t_game *p)
+void			goin(t_game *p, int i)
 {
   char			*new_map;
-  int			i;
   int			j;
 
-  i = 0;
   j = p->largeur;
-  new_map = xmalloc(sizeof(*new_map) * (p->largeur * p->hauteur));
+  new_map = xmalloc(sizeof(*new_map) * (p->largeur * p->hauteur) + 1);
   while (i < (p->largeur * 2))
     new_map[i] = p->map[i++];
   while (i < (p->largeur * p->hauteur) - p->largeur)
@@ -111,6 +109,7 @@ void			goin(t_game *p)
     }
   while (i < (p->largeur * p->hauteur))
     new_map[i++] = '#';
+  new_map[i] = '\0';
   free(p->map);
   p->map = new_map;
   change_cases(p);

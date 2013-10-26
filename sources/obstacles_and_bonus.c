@@ -5,7 +5,7 @@
 ** Login   <barroq_t@epitech.net>
 ** 
 ** Started on  Sat Oct 26 14:28:29 2013 thomas barroqueiro
-** Last update Sat Oct 26 14:30:52 2013 thomas barroqueiro
+** Last update Sat Oct 26 15:32:09 2013 thomas barroqueiro
 */
 
 #include		"../includes/mariokart.h"
@@ -28,7 +28,7 @@ void			obstacle(t_game *p, int count)
       count++;
     }
   pos = i - (random() % count); 
-  if (p->obstacle_cd == 0 && count > 3)
+  if (p->obstacle_cd == 0 && count > 5)
     {
       if (p->map[pos] == ' ')
 	p->map[pos] = '#';
@@ -57,7 +57,7 @@ void			bonus(t_game *p)
       count++;
     }
   pos = i - (random() % count); 
-  if (p->bonus_cd == 0 && count > 3)
+  if (p->bonus_cd == 0)
     {
       if (p->map[pos] == ' ')
 	p->map[pos] = 'A';

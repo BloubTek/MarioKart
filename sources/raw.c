@@ -5,7 +5,7 @@
 ** Login   <barroq_t@epitech.net>
 ** 
 ** Started on  Fri Oct 25 23:04:02 2013 thomas barroqueiro
-** Last update Sat Oct 26 11:47:22 2013 thomas barroqueiro
+** Last update Sat Oct 26 15:28:01 2013 thomas barroqueiro
 */
 
 #include		"../includes/mariokart.h"
@@ -14,6 +14,7 @@ void			raw_mode(struct termios *t)
 {
   if (tcgetattr(0, t) == -1)
     return ;
+  t->c_lflag &= ~ECHO;
   t->c_lflag &= ~ICANON;
   t->c_cc[VMIN] = 1;
   t->c_cc[VTIME] = 0;
